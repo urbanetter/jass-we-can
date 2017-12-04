@@ -1,0 +1,9 @@
+.card {
+    width: 89px;
+    height: 143px;
+    background-color: antiquewhite;
+}
+
+.right p {
+    text-align: right;
+}

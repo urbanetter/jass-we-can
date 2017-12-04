@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card, Suit, Value } from '../card/card';
+import { Card, Suit, Value } from '../card';
 
 @Component({
   selector: 'app-hand',
@@ -13,7 +13,21 @@ export class HandComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.cards = [new Card(Suit.Bell, Value.Ace), new Card(Suit.Rose, Value.Seven)];
+    this.cards = [
+        new Card(Suit.Bell, Value.Ace),
+        new Card(Suit.Rose, Value.Seven),
+        new Card(Suit.Shield, Value.Jack),
+        new Card(Suit.Bell, Value.Ace),
+        new Card(Suit.Rose, Value.Seven),
+        new Card(Suit.Bell, Value.Ace),
+        new Card(Suit.Rose, Value.Seven),
+        new Card(Suit.Shield, Value.Jack),
+        new Card(Suit.Oak, Value.Queen)
+    ];
+  }
+
+  onClicked(card) {
+    console.log(card);
   }
 
 }

@@ -1,0 +1,30 @@
+<table>
+  <tr>
+    <td>
+      <p>{{ topLeft.name }}</p>
+      <div class="card">
+        <app-card *ngIf="topLeft.card" [card]="topLeft.card"></app-card>
+      </div>
+    </td>
+    <td class="right">
+      <p>{{ topRight.name }}</p>
+      <div class="card">
+        <app-card *ngIf="topRight.card" [card]="topRight.card"></app-card>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="card">
+        <app-card *ngIf="bottomLeft.card" [card]="bottomLeft.card"></app-card>
+      </div>
+      <p>{{ bottomLeft.name }}</p>
+    </td>
+    <td class="right">
+      <div class="card">
+        <app-card *ngIf="bottomRight.card" [card]="bottomRight.card"></app-card>
+      </div>
+      <p>{{ bottomRight.name }}</p>
+    </td>
+  </tr>
+</table>

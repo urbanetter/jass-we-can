@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let card of cards">
+  <li *ngFor="let card of cards" (click)="onClicked(card)">
     <app-card [card]="card"></app-card>
   </li>
 </ul>
