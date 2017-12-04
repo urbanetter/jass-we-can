@@ -20,7 +20,7 @@ export class TrickComponent implements OnInit {
     this.bottomLeft = new Player('Fritz');
     this.bottomRight = new Player('Sepp');
 
-    this.topLeft.card = new Card(Suit.Rose, Value.Ace);
+    this.bottomLeft.card = new Card(Suit.Rose, Value.Ace);
   }
 
 }

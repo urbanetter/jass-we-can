@@ -8,6 +8,7 @@ import { HandComponent } from './hand/hand.component';
 import { TableComponent } from './table/table.component';
 import { TrickComponent } from './trick/trick.component';
 
+import { JassService } from './jass.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { TrickComponent } from './trick/trick.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [JassService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
