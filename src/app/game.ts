@@ -12,6 +12,6 @@ export enum Style {
 export class Game {
     public id: string;
     public style?: Style;
-    public trickCards: Card[];
-    public handCards: Card[];
+    public trick?: Card[];
+    public hand: Card[];
 }

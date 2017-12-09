@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Game} from './game';
+import {Game, Style} from './game';
 import {Observable} from 'rxjs/Observable';
 import {tap} from 'rxjs/operators';
 import {environment} from '../environments/environment';
+import {Card} from "./card";
+import {PlayedCards} from "./playedCards";
 
 @Injectable()
 export class JassService {
@@ -20,5 +22,13 @@ export class JassService {
     return observable.pipe(
         tap(game => localStorage.setItem('game-id', game.id))
     );
+  }
+
+  setStyle(style: Style): Observable<Game> {
+    return this.http.post<Game>(environment.jassyUrl + localStorage.getItem('game-id') + '/style', {style: style});
+  }
+
+  playCard(card: Card): Observable<PlayedCards> {
+    return this.http.post<PlayedCards>(environment.jassyUrl + localStorage.getItem('game-id'), {card: card});
   }
 }

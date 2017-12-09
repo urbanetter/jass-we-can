@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  jassyUrl: 'http://localhost:8000/jassy/'
+  jassyUrl: 'http://localhost:8000/jwc/'
 };

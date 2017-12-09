@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { JassService } from '../jass.service';
+import {Card} from '../card';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  public hand: Card[];
 
+  constructor(private service: JassService) {
+    this.hand = [];
+  }
+;
   ngOnInit() {
+    this.service.getGame().subscribe((game) => this.hand = game.hand);
   }
 
 }
