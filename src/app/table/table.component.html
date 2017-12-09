@@ -1,1 +1,4 @@
-<app-hand [cards]="hand"></app-hand>
+<app-style *ngIf="game.ready == false"></app-style>
+<app-trick *ngIf="game.ready" [cards]="game.trick"></app-trick>
+<app-info *ngIf="game.ready" [game]="game"></app-info>
+<app-hand [cards]="game.hand"></app-hand>

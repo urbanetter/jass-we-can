@@ -14,4 +14,6 @@ export class Game {
     public style?: Style;
     public trick?: Card[];
     public hand: Card[];
+    public ready: boolean;
+    public trickNumber: number;
 }
