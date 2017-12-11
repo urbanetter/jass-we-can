@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Card} from '../card';
 
 @Component({
@@ -8,7 +8,10 @@ import {Card} from '../card';
 })
 export class TrickComponent {
 
-  @Input()
-  cards: Card[];
+  @Input() cards: Card[];
+  @Output() finished = new EventEmitter();
 
+  onClick() {
+    this.finished.emit();
+  }
 }

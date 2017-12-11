@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {Game} from '../game';
 
 @Component({
   selector: 'app-info',
@@ -8,6 +7,7 @@ import {Game} from '../game';
 })
 export class InfoComponent{
 
-  @Input() game: Game;
+  @Input() style: string;
+  @Input() state: string;
 
 }

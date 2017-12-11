@@ -1,7 +1,8 @@
 import {Card} from './card';
 
 export class PlayedCards {
-    public cards: Card[];
+    public trick: Card[];
+    public lastTrick?: Card[];
     public hint?: Card;
     public hintReason?: string;
 }

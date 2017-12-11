@@ -1,4 +1,5 @@
-<app-style *ngIf="game.ready == false"></app-style>
-<app-trick *ngIf="game.ready" [cards]="game.trick"></app-trick>
-<app-info *ngIf="game.ready" [game]="game"></app-info>
-<app-hand [cards]="game.hand"></app-hand>
+<app-style *ngIf="chooseStyle" (chooseStyle)="setStyle($event)"></app-style>
+<app-trick [cards]="trick" (finished)="trickFinished()"></app-trick>
+<app-info [state]="state" [style]="style"></app-info>
+<button (click)="newGame()">New Game</button>
+<app-hand  [cards]="hand" (playCard)="playCard($event)"></app-hand>

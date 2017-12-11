@@ -24,6 +24,12 @@ export class JassService {
     );
   }
 
+  newGame(): Observable<Game> {
+    return this.http.post<Game>(environment.jassyUrl, {}).pipe(
+      tap(game => localStorage.setItem('game-id', game.id))
+    );
+  }
+
   setStyle(style: Style): Observable<Game> {
     return this.http.post<Game>(environment.jassyUrl + localStorage.getItem('game-id') + '/style', {style: style});
   }
