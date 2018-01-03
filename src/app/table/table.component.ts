@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
   public style: string;
   public trick: Card[];
   public hand: Card[];
+  public teams: string;
   private nextTrick?: Card[];
   private trickNumber: number;
 
@@ -50,12 +51,16 @@ export class TableComponent implements OnInit {
     this.trick = game.trick;
     this.trickNumber = game.trickNumber;
     if (!game.ready) {
-        this.state = 'Not ready';
+      this.state = 'Not ready';
     } else if (this.trickNumber <= 9) {
-        this.state = 'Trick ' + this.trickNumber + ' out of 9';
+      this.state = 'Trick ' + this.trickNumber + ' out of 9';
     } else {
-        this.state = 'Finished';
+      this.state = 'Finished';
     }
+    this.teams = '';
+    game.teams.forEach((team) => {
+      this.teams += team.points + ' points: ' + team.name + ' ';
+    });
   }
 
   playCard(card: Card) {
@@ -71,6 +76,10 @@ export class TableComponent implements OnInit {
       this.nextTrick = null;
       this.trick = playedCards.trick;
     }
+    this.teams = '';
+    playedCards.teams.forEach((team) => {
+      this.teams += team.points + ' points: ' + team.name + ' ';
+    });
   }
 
   trickFinished() {
@@ -79,9 +88,9 @@ export class TableComponent implements OnInit {
       this.nextTrick = null;
       this.trickNumber++;
       if (this.trickNumber <= 9) {
-          this.state = 'Trick ' + this.trickNumber + ' out of 9';
+        this.state = 'Trick ' + this.trickNumber + ' out of 9';
       } else {
-          this.state = 'Finished';
+        this.state = 'Finished';
       }
     }
   }

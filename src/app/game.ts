@@ -1,4 +1,5 @@
 import {Card} from './card';
+import {Team} from './team';
 
 export enum Style {
     TrumpOak = 'trump oak',
@@ -16,4 +17,5 @@ export class Game {
     public hand: Card[];
     public ready: boolean;
     public trickNumber: number;
+    public teams: Team[];
 }

@@ -9,5 +9,6 @@ export class InfoComponent{
 
   @Input() style: string;
   @Input() state: string;
+  @Input() teams: string;
 
 }
