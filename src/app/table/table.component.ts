@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import { JassService } from '../jass.service';
+import {JassService} from '../jass.service';
 import {Card} from '../card';
-import {Game, Style} from "../game";
-import {PlayedCards} from "../playedCards";
+import {Game, Style} from '../game';
+import {PlayedCards} from '../playedCards';
 
 @Component({
   selector: 'app-table',
@@ -76,10 +76,7 @@ export class TableComponent implements OnInit {
       this.nextTrick = null;
       this.trick = playedCards.trick;
     }
-    this.teams = '';
-    playedCards.teams.forEach((team) => {
-      this.teams += team.points + ' points: ' + team.name + ' ';
-    });
+    this.teams = 'You: ' + playedCards.teams[0].points + ', others: ' + playedCards.teams[1].points;
   }
 
   trickFinished() {

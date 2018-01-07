@@ -1,5 +1,13 @@
-<app-style *ngIf="chooseStyle" (chooseStyle)="setStyle($event)"></app-style>
-<app-trick *ngIf="!chooseStyle" [cards]="trick" (finished)="trickFinished()"></app-trick>
-<app-info *ngIf="!chooseStyle" [state]="state" [style]="style" [teams]="teams"></app-info>
-<button (click)="newGame()">New Game</button>
-<app-hand *ngIf="hand" [cards]="hand" (playCard)="playCard($event)"></app-hand>
+<mat-toolbar color="primary">
+    <span>Jass We Can!</span>
+    <span class="fill-remaining-space"></span>
+    <button (click)="newGame()" mat-button color="secondary">New Game</button>
+</mat-toolbar>
+<mat-card>
+    <app-style *ngIf="chooseStyle" (chooseStyle)="setStyle($event)"></app-style>
+    <div class="main-row">
+        <app-trick *ngIf="!chooseStyle" [cards]="trick" (finished)="trickFinished()"></app-trick>
+        <app-info *ngIf="!chooseStyle" [state]="state" [style]="style" [teams]="teams"></app-info>
+    </div>
+    <app-hand *ngIf="hand" [cards]="hand" (playCard)="playCard($event)"></app-hand>
+</mat-card>

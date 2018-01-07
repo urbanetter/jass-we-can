@@ -12,6 +12,8 @@ import { StyleComponent } from './style/style.component';
 import { JassService } from './jass.service';
 import { InfoComponent } from './info/info.component';
 
+import { MatToolbarModule, MatButtonModule, MatCardModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,10 @@ import { InfoComponent } from './info/info.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [JassService],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { Card } from '../card';
 })
 export class CardComponent {
 
-  @Input()
-  card: Card;
+  @Input() public card: Card;
+  @Input() public type: string = '';
+
 }

@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.card.condensed {
+    width: 50px;
+}
+
 .card.oak {
     background-position-y: 0;
 }

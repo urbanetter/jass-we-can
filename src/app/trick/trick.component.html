@@ -1,13 +1,11 @@
 <table (click)="onClick()">
   <tr>
     <td>
-      <p>Peter</p>
       <div class="card">
         <app-card *ngIf="cards[3]" [card]="cards[3]"></app-card>
       </div>
     </td>
     <td class="right">
-      <p>Hans (MATE)</p>
       <div class="card">
         <app-card *ngIf="cards[2]" [card]="cards[2]"></app-card>
       </div>
@@ -18,13 +16,11 @@
       <div class="card">
         <app-card *ngIf="cards[0]" [card]="cards[0]"></app-card>
       </div>
-      <p>Ueli (YOU)</p>
     </td>
     <td class="right">
       <div class="card">
         <app-card *ngIf="cards[1]" [card]="cards[1]"></app-card>
       </div>
-      <p>Fritz</p>
     </td>
   </tr>
 </table>
